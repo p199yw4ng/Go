@@ -2,14 +2,15 @@ package main
 
 import (
 	"fmt"
-	"Go/alog"
+	"github.com/p199yw4ng/ExGo/alog"
 )
 
 func main() {
 	// lru
 
 	arr := []int{6, 7, 8, 9, 10, 1, 2, 3, 4, 5}
-
+	alog.BubbleSort(arr)
+	fmt.Println(arr)
 }
 
 func LRU(){

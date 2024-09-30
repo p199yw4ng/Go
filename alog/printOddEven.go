@@ -1,10 +1,11 @@
-package main
+package alog
 
 import (
 	"fmt"
 	"sync"
 )
 
+// 打印奇数和偶数
 func printOdds(wg *sync.WaitGroup, oddsChan, evensChan chan bool, num int) {
 	defer wg.Done()
 	for i := 1; i <= num; i += 2 {
@@ -13,7 +14,6 @@ func printOdds(wg *sync.WaitGroup, oddsChan, evensChan chan bool, num int) {
 		if i < num {
 			oddsChan <- true
 		}
-
 	}
 }
 func printEvens(wg *sync.WaitGroup, oddsChan, evensChan chan bool, num int) {
@@ -24,17 +24,11 @@ func printEvens(wg *sync.WaitGroup, oddsChan, evensChan chan bool, num int) {
 		if i < num {
 			evensChan <- true
 		}
-
 	}
 }
 
-func main() {
-
+func PrintOddAndEven(num int) {
 	var wg sync.WaitGroup
-
-	var num int
-	fmt.Scan(&num)
-
 	odds, evens := make(chan bool), make(chan bool)
 	wg.Add(2)
 	go printOdds(&wg, odds, evens, num)

@@ -1,7 +1,7 @@
 package alog
 
 // 冒泡排序
-func bubbleSort(arr []int) []int {
+func BubbleSort(arr []int) []int {
 	n := len(arr)
 	// 从第一个元素开始
 	// 比较相邻的两个元素
@@ -18,7 +18,7 @@ func bubbleSort(arr []int) []int {
 
 
 // 选择排序
-func selectionSort(arr []int) []int {
+func SelectionSort(arr []int) []int {
 	n := len(arr)
 	// 从第一个元素开始
 	// 在剩余的元素中找到最小的元素
@@ -37,7 +37,7 @@ func selectionSort(arr []int) []int {
 }
 
 // 插入排序 
-func insertionSort(arr []int) []int {
+func InsertionSort(arr []int) []int {
 	n := len(arr)
 	// 从第二个元素开始
 	// 将当前元素插入到前面已经有序的部分中
@@ -58,7 +58,7 @@ func insertionSort(arr []int) []int {
 
 
 // 归并排序
-func mergeSort(arr []int) []int {
+func MergeSort(arr []int) []int {
 	if len(arr) <= 1 {
 		return arr
 	}
@@ -66,8 +66,8 @@ func mergeSort(arr []int) []int {
 	// 递归地对左右两部分进行排序
 	// 合并左右两部分
 	mid := len(arr) / 2
-	left := mergeSort(arr[:mid])
-	right := mergeSort(arr[mid:])
+	left := MergeSort(arr[:mid])
+	right := MergeSort(arr[mid:])
 	return merge(left, right)
 }
 func merge(left, right []int) []int {
@@ -88,7 +88,7 @@ func merge(left, right []int) []int {
 }	
 
 // 快速排序
-func quickSort(arr []int) []int {
+func QuickSort(arr []int) []int {
 	if len(arr) <= 1 {
 		return arr
 	}
@@ -105,13 +105,13 @@ func quickSort(arr []int) []int {
 			right = append(right, num)
 		}
 	}	
-	left = quickSort(left)
-	right = quickSort(right)
+	left = QuickSort(left)
+	right = QuickSort(right)
 	return append(append(left, pivot), right...)
 }
 
 // 堆排序
-func heapSort(arr []int) []int {
+func HeapSort(arr []int) []int {
 	n := len(arr)
 	// 构建最大堆
 	for i := n/2 - 1; i >= 0; i-- {
