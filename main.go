@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/p199yw4ng/ExGo/alog"
+	"sort"
 )
 
 func main() {
@@ -11,6 +12,7 @@ func main() {
 	arr := []int{6, 7, 8, 9, 10, 1, 2, 3, 4, 5}
 	alog.BubbleSort(arr)
 	fmt.Println(arr)
+	sort.maps()
 }
 
 func LRU(){
